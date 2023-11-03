@@ -1,0 +1,18 @@
+/*
+
+    float rootBeer = 1.99;
+    
+    float root_Beer{10.99};
+    double cheeseBurger = 599;
+    bool shouldHaveLunch = true;
+    bool shouldHaveLunch2{};
+
+    bool equal{4==9}; //false
+    bool notEqual{4 != 9}; //true
+    bool less{4>9}, greater{4>9}, lessEqual{4<=9}, greaterEqual{4>=9}; // false, false, true, false
+*/
+
+    //game loop
+        //WindowShouldClose == false
+        //WindowShouldClose != true
+    //while(!WindowShouldClose()) {
