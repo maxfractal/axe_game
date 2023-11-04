@@ -13,16 +13,18 @@ int main() {
     int circle_y{200};
     //radius
     float circle_radius{50};
+    //circle edges
     int l_circle_x{circle_x - circle_radius}, r_circle_x{circle_x + circle_radius}, u_circle_y{circle_y - circle_radius}, b_circle_y{circle_y + circle_radius};
 
     //axe coordinates
     int axe_x{400}, axe_y{0};
-    //length
+    int direction{4};
     int axe_length = 50;
+    //axe edges
     int l_axe_x{axe_x};
     int r_axe_x{axe_x + axe_length};
     int u_axe_y{axe_y}, b_axe_y{axe_y + axe_length};
-    int direction = 4;
+    
     
     SetTargetFPS(60);
     Texture2D texture = LoadTexture("x1.png");
