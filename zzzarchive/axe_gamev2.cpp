@@ -39,7 +39,7 @@ int main() {
     while(!WindowShouldClose()) {
         if (collision_with_axe = true)
         {
-            DrawText("Game Over!", 400, 200, 20, RED);
+            DrawText("Game Over! axe_gamev2.cpp", 400, 200, 20, RED);
         } 
         else 
         {

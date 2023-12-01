@@ -34,8 +34,8 @@ int main() {
         ClearBackground(RAYWHITE);
 
 
-        if (collision_with_axe) {
-            DrawText("Game Over!", width/2-60, 200, 62, RED);
+        if (!collision_with_axe) {
+            DrawText("Game Over! \n axe_game.cpp", width/2-60, 200, 62, RED);
         } 
         else 
         {
