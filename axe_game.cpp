@@ -12,15 +12,14 @@ int main() {
     int circle_x{200};
     int circle_y{200};
     //radius
-    float circle_radius{50};
+    float circle_radius{25};
     int l_circle_x{circle_x - circle_radius}, r_circle_x{circle_x + circle_radius}, u_circle_y{circle_y - circle_radius}, b_circle_y{circle_y + circle_radius};
 
     //axe coordinates
     int axe_x{400}, axe_y{0};
     //length
     int axe_length = 50;
-    int l_axe_x{axe_x};
-    int r_axe_x{axe_x + axe_length};
+    int l_axe_x{axe_x}, r_axe_x{axe_x + axe_length};
     int u_axe_y{axe_y}, b_axe_y{axe_y + axe_length};
     int direction = 4;
     bool collision_with_axe{true};
@@ -34,8 +33,8 @@ int main() {
         ClearBackground(RAYWHITE);
 
 
-        if (!collision_with_axe) {
-            DrawText("Game Over! \n axe_game.cpp", width/2-60, 200, 62, RED);
+        if (collision_with_axe) {
+            DrawText("Game Over!", 290, 200, 62, RED);
         } 
         else 
         {
