@@ -22,7 +22,11 @@ int main() {
     int l_axe_x{axe_x}, r_axe_x{axe_x + axe_length};
     int u_axe_y{axe_y}, b_axe_y{axe_y + axe_length};
     int direction = 4;
-    bool collision_with_axe{true};
+    bool collision_with_axe = 
+                    (b_axe_y >= u_circle_y) && 
+                    (u_axe_y <= b_circle_y) && 
+                    (l_axe_x <= r_circle_x) && 
+                    (r_axe_x >= l_circle_x);
     
     SetTargetFPS(60);
     Texture2D texture = LoadTexture("x1.png");
@@ -38,7 +42,27 @@ int main() {
         } 
         else 
         {
-            //Game Logic Begins    
+            //Game Logic Begins
+
+            //update the edges
+            l_circle_x = circle_x - circle_radius;
+            r_circle_x = circle_x + circle_radius;
+            u_circle_y = circle_y - circle_radius;
+            b_circle_y = circle_y + circle_radius;
+            l_axe_x = axe_x;
+            r_axe_x = axe_x + axe_length;
+            u_axe_y = axe_y;
+            b_axe_y = axe_y + axe_length;
+            //upate collision_with_axe
+            collision_with_axe = 
+                    (b_axe_y >= u_circle_y) && 
+                    (u_axe_y <= b_circle_y) && 
+                    (l_axe_x <= r_circle_x) && 
+                    (r_axe_x >= l_circle_x);
+
+            DrawText(TextFormat("Circle X: %i", circle_x), 40, 10, 20, RED);
+            DrawText(TextFormat("Circle Y: %i", circle_y), 40, 30, 20, RED);
+
             DrawTexture(texture, width/2 - texture.width/2, height/2 - texture.height/2, WHITE);
             DrawCircle(circle_x,circle_y,circle_radius,BLUE);
             DrawRectangle(axe_x, axe_y, axe_length, axe_length, RED);
